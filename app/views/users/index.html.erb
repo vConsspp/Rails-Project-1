@@ -1,0 +1,21 @@
+<h1> Here Are Your Users : </h1>
+
+<table border = 1>
+    <tr>
+        <th> ID </th>
+        <th> First Name </th>
+        <th> Last Name </th>
+        <th> Email </th>
+        <th> Phone </th>
+    </tr>
+
+    <% @users.each do |user|%>
+        <tr>
+            <th> <%= user.id%> </th>
+            <th> <%= user.firstname%> </th>
+            <th> <%= user.lastname%> </th>
+            <th><%= user.email%></th>
+            <th><%= user.phone%> </th>
+        </tr>
+    <%end%>
+</table>
