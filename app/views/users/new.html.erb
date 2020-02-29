@@ -1,0 +1,48 @@
+<% if @user.errors.any?%>
+<ul>
+  <%@user.errors.full_messages.each do |msg|%>
+    <li><%= msg%></li>
+  <%end%>
+</ul>
+<%end%>
+
+<h1> Enter User Details </h1>
+
+<%=form_for :user, :url => create_user_path do |f| %>
+  <p>
+    <%= f.label :firstname%>
+    <%= f.text_field :firstname%>
+  </p> 
+
+  <p>
+    <%= f.label :lastname%>
+    <%= f.text_field :lastname%>
+  </p> 
+
+  <p>
+    <%= f.label :email%>
+    <%= f.text_field :email%>
+  </p> 
+
+  <p>
+    <%= f.label :password%>
+    <%= f.password_field :password%>
+  </p>
+
+  <p>
+    <%= f.label :confirm_password%>
+    <%= f.password_field :password_confirmation%>
+  </p>
+
+  <p>
+    <%= f.label :phone%>
+    <%= f.text_field :phone%>
+  </p>
+
+  <%= f.submit "Sign Up"%>
+
+
+  <br/><br/><br/>
+  <%= link_to "Sign In" , signin_path%>
+  
+<% end %>

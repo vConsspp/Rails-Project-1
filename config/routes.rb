@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
+  root "users#signin"
+
   get "/users", to: "users#index"
+
+  get "signup" , to: "users#new" , :as => "user_signup"
+
+  post "user/create" , to: "users#create", :as =>  "create_user"
+
+  get "signin" , to: "users#signin" 
+
+  post "signin" , to: "users#validate"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<%flash.each do |name , msg|%>
+  <h3> <%= msg%> </h3>
+<%end%>
+
 <%= yield %>
 
 </body>
